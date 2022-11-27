@@ -1,5 +1,7 @@
 :root {
-  --linear-gradient: linear-gradient(to right, hsl(249, 99%, 64%) hsl(278, 94%, 30%));
+  --purple: hsl(278, 94%, 30%);
+  --blue: hsl(249, 99%, 64%);
+  --linear-gradient: linear-gradient(to right, var(--blue), var(--purple));
   --error-red: hsl(0, 100%, 66%);
   --white: hsl(0, 0%, 100%);
   --light-grayish-violet: hsl(270, 3%, 87%);
@@ -10,4 +12,322 @@
 body {
   margin: 0;
   font-family: 'Space Grotesk', sans-serif;
+}
+header {
+  background: radial-gradient(circle at 50%, var(--purple), var(--very-dark-violet));
+  display: flex;
+  justify-content: center;
+  height: 230px;
+  margin-bottom: 4rem;
+}
+header .wrapper {
+  position: relative;
+  max-width: 500px;
+  flex-grow: 1;
+}
+
+.card {
+  position: absolute;
+  width: 285px;
+  height: 160px;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  overflow: hidden;
+  box-shadow: 0 0.5rem 4rem 0 rgba(0, 0, 0, 0.25);
+}
+.card__deco {
+  position: absolute;
+  inset: 0;
+}
+.card__deco::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 80% 100%, rgba(0, 255, 229, 0.5) 0%, transparent 50%);
+  animation-name: deco;
+  animation-duration: 9s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+}
+.card__deco::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 60% 0, rgba(255, 77, 0, 0.5) 0%, transparent 50%);
+  animation-name: deco;
+  animation-duration: 6.5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+}
+.card__decoRev::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(208, 255, 0, 0.25) 10%, transparent 40%);
+  animation-name: decoDia;
+  animation-duration: 7.5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+}
+.card__decoRev::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 60% 0, rgba(0, 136, 255, 0.5) 0%, transparent 50%);
+  animation-name: decoRev;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+}
+@keyframes deco {
+  from {transform: translateX(-10%) scale(1.5);}
+  to {transform: translateX(10%) scale(1.8);}
+}
+@keyframes decoDia {
+  from {transform: translate(10%, -50%) scale(1.2);}
+  to {transform: translate(-10%, 50%) scale(1.5);}
+}
+@keyframes decoRev {
+  from {transform: translateY(0%);}
+  to {transform: translateY(-50%);}
+}
+.card--front {
+  top: 100%;
+  left: 1rem;
+  padding: 5.5rem 1.25rem 1.5rem;
+  background: radial-gradient(circle at 70%, var(--error-red) 0%, var(--blue) 50%);
+  color: var(--white);
+  transform: translateY(-72%);
+}
+.card--front::before {
+  content: "";
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  display: block;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--white);
+}
+.card--front::after {
+  content: "";
+  position: absolute;
+  left: 3.75rem;
+  top: 1.575rem;
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1px solid var(--white);
+}
+.card--back {
+  top: 1rem;
+  right: 1rem;
+  background-image: url("./images/bg-card-back.png");
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card__container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+.card__cvc {
+  flex-grow: 1;
+  margin: 1.5rem;
+  padding-right: 2rem;
+  margin: 0;
+  color: var(--white);
+  text-align: right;
+  font-size: 0.5rem;
+  letter-spacing: 1px;
+}
+.card__account {
+  width: 100%;
+  font-size: 1.15rem;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+.card__name {
+  text-transform: uppercase;
+  font-size: 0.5rem;
+  letter-spacing: 2px;
+}
+.card__date {
+  font-size: 0.5rem;
+  letter-spacing: 2px;
+}
+.form {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  max-width: 360px;
+  margin-inline: auto;
+}
+.form__field {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  margin-top: 1.75rem;
+}
+.form__inputs {
+  display: flex;
+  gap: 0 0.5rem;
+}
+.form input {
+  padding: 0.75rem;
+  border: 1px solid lightgray;
+  border-radius: 0.25rem;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+}
+.form input::placeholder {
+  color: var(--light-grayish-violet);
+}
+.form__container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0 0.5rem;
+}
+.form__container .form__field {
+  grid-column: span 2;
+}
+.form__container input {
+  width: 100%;
+  box-sizing: border-box;
+}
+.form__container input:last-of-type {
+  grid-column: span 2;
+}
+.form__submit {
+  margin-top: 1.75rem;
+  background-color: var(--very-dark-violet);
+  color: var(--white);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.form input.error {
+  outline: 1px solid var(--error-red);
+}
+.form__error {
+  color: var(--error-red);
+  text-transform: none;
+  font-size: 0.6rem;
+  line-height: 0.9;
+  position: absolute;
+  top: calc(100% + 0.5rem);
+}
+.form__error.hidden {
+  display: none;
+}
+.form--continue .form__field {
+  display: none;
+}
+.continue {
+  display: none;
+}
+.continue__title {
+  text-transform: uppercase;
+  font-size: 2rem;
+  letter-spacing: 3px;
+  margin: 2rem 0 0;
+}
+.continue__text {
+  color: var(--dark-grayish-violet);
+}
+.form--continue .continue {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+.form__submit--continue {
+  display: none;
+}
+.form--continue .form__submit--continue {
+  display: block;
+}
+.form--continue .form__submit--confirm {
+  display: none;
+}
+
+@media screen and (min-width: 1000px) {
+  body {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    min-height: 100vh;
+  }
+  header {
+    margin-bottom: 0;
+    height: auto;
+  }
+  main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .card--front {
+    top: 50%;
+    left: 100%;
+    transform: translate(-72%, -110%);
+  }
+  .card--back {
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translate(-50%, 10%);
+  }
+  .form {
+    min-width: 360px;
+  }
+}
+
+.toast {
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin: 1rem;
+  display: flex;
+  padding: 1rem calc(40px + 2rem) 1rem 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 1rem 2rem 0 rgba(0, 0, 0, 0.5);
+  transform: translateX(0);
+  transition: transform .2s;
+}
+.toast.hidden {
+  transform: translateX(150%);
+}
+.toast--info {
+  background-color: var(--purple);
+  color: white;
+}
+.toast__message {
+  margin: 0;
+}
+.toast__close {
+  position: absolute;
+  top: 0.35rem;
+  right: 0.1rem;
+  border: none;
+  background-color: transparent;
+  width: 40px;
+  height: 40px;
+  padding: 0.5rem;
+  color: inherit;
 }

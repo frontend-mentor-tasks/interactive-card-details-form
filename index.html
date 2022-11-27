@@ -14,32 +14,102 @@
 </head>
 <body>
 
-  0000 0000 0000 0000
-  Jane Appleseed
-  00/00
+  <header>
+    <div class="wrapper">
+      <div class="card card--back">
+        <div class="card__cvc" data-target="cvc">000</div>
+      </div>
+      <div class="card card--front">
+        <div class="card__deco"></div>
+        <div class="card__decoRev"></div>
+        <div class="card__container">
+          <div class="card__account" data-target="number">0000 0000 0000 0000</div>
+          <div class="card__name" data-target="name">Jane Appleseed</div>
+          <div class="card__date">
+            <span class="card__month" data-target="month">00</span>/<span class="card__year" data-target="year">00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
 
-  000
+  <main>
+    <form class="form" id="form">
+      <div class="continue">
+        <svg width="80" height="80" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="40" cy="40" r="40" fill="url(#a)"/><path d="M28 39.92 36.08 48l16-16" stroke="#fff" stroke-width="3"/><defs><linearGradient id="a" x1="-23.014" y1="11.507" x2="0" y2="91.507" gradientUnits="userSpaceOnUse"><stop stop-color="#6348FE"/><stop offset="1" stop-color="#610595"/></linearGradient></defs></svg>
+        <p class="continue__title">Thank you!</p>
+        <p class="continue__text">We've added your card details</p>
+      </div>
+      <label class="form__field">
+        Cardholder Name
+        <input
+          type="text"
+          placeholder="e.g. Jane Appleseed"
+          name="name"
+          data-src="name"
+          data-initial="Jane Appleseed"
+        >
+        <span class="form__error hidden" data-error="name">Error</span>
+      </label>
+      <label class="form__field">
+        Card Number
+        <input
+          type="text"
+          placeholder="e.g. 1234 5678 9123 0000"
+          name="number"
+          data-src="number"
+          data-pattern="0000 0000 0000 0000"
+        >
+        <span class="form__error hidden" data-error="number">Error</span>
+      </label>
+      <div class="form__container">
+        <label class="form__field" for="month">
+          Exp. Date (MM/YY)
+          <div class="form__inputs">
+            <input
+              type="text"
+              placeholder="MM"
+              id="month"
+              name="month"
+              data-src="month"
+              data-pattern="00"
+            >
+            <input
+              type="text"
+              placeholder="YY"
+              name="year"
+              data-src="year"
+              data-pattern="00"
+            >
+          </div>
+          <span class="form__error hidden" data-error="month">Error</span>
+          <span class="form__error hidden" data-error="year">Error</span>
+        </label>
+        <label class="form__field" for="cvc">
+          CVC
+          <input
+            type="text"
+            placeholder="e.g. 123"
+            id="cvc"
+            name="cvc"
+            data-src="cvc"
+            data-pattern="000"
+          >
+          <span class="form__error hidden" data-error="cvc">Error</span>
+        </label>
+      </div>
+      <button class="form__submit form__submit--confirm">Confirm</button>
+      <button class="form__submit form__submit--continue">Continue</button>
+    </form>
+  </main>
 
-  Cardholder Name
-  e.g. Jane Appleseed
+  <div class="toast toast--info hidden" data-toast>
+    <p class="toast__message">Hello</p>
+    <button class="toast__close">
+      <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"></path></svg>
+    </button>
+  </div>
 
-  Card Number
-  e.g. 1234 5678 9123 0000
-
-  Exp. Date (MM/YY)
-  MM
-  YY
-
-  CVC
-  e.g. 123
-
-  Confirm
-
-  <!-- Completed state start -->
-
-  Thank you!
-  We've added your card details
-  Continue
-  
+  <script src="./app.js"></script>
 </body>
 </html>
