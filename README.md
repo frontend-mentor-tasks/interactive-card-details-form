@@ -31,7 +31,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [On Frontend Mentor](https://www.frontendmentor.io/challenges/)
+- Solution URL: [On Frontend Mentor](https://www.frontendmentor.io/challenges/interactive-card-details-form-XpS8cKZDWw/hub)
 - Live Site URL: [Github Pages URL](https://frontend-mentor-tasks.github.io/interactive-card-details-form/)
 - Code URL: [Github URL](https://github.com/frontend-mentor-tasks/interactive-card-details-form)
 
