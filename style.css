@@ -198,6 +198,37 @@ header .wrapper {
 .form input::placeholder {
   color: var(--light-grayish-violet);
 }
+.form input:focus-within,
+.form button:focus-within {
+  outline: 2px solid var(--purple);
+}
+/* .form input:focus-within,
+.form button:focus-within {
+  outline: none;
+  border-image-source: linear-gradient(to right, rgba(67, 0, 99, 0.5), var(--very-dark-violet));
+  border-image-width: 2px;
+  border-image-slice: 10;
+} */
+/* .form input,
+.form button {
+  outline: none;
+  border: 1px solid transparent;
+  border-radius: 0.5rem;
+  background-image: linear-gradient(white, white),
+                    linear-gradient(to right, green, gold);
+  background-origin: padding-box, border-box;
+  background-repeat: no-repeat;
+} */
+/* .form input::after,
+.form button::after {
+  outline: none;
+  content: "";
+  position: absolute;
+  inset: -4px;
+  z-index: -1;
+  background-image: var(--linear-gradient);
+  border-radius: 0.5rem;
+} */
 .form__container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -320,6 +351,13 @@ header .wrapper {
 .toast__message {
   margin: 0;
 }
+.toast__link {
+  color: var(--white);
+  margin-left: 1rem;
+}
+.toast__link:hover {
+  color: var(--light-grayish-violet);
+}
 .toast__close {
   position: absolute;
   top: 0.35rem;
@@ -330,4 +368,5 @@ header .wrapper {
   height: 40px;
   padding: 0.5rem;
   color: inherit;
+  cursor: pointer;
 }

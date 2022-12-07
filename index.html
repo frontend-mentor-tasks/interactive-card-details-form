@@ -36,7 +36,7 @@
   <main>
     <form class="form" id="form">
       <div class="continue">
-        <svg width="80" height="80" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="40" cy="40" r="40" fill="url(#a)"/><path d="M28 39.92 36.08 48l16-16" stroke="#fff" stroke-width="3"/><defs><linearGradient id="a" x1="-23.014" y1="11.507" x2="0" y2="91.507" gradientUnits="userSpaceOnUse"><stop stop-color="#6348FE"/><stop offset="1" stop-color="#610595"/></linearGradient></defs></svg>
+        <svg width="80" height="80" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="40" cy="40" r="40" fill="url(#a)"/><path d="M28 39.92 36.08 48l16-16" stroke="#fff" stroke-width="3"/><defs><linearGradient id="a" x1="-23.014" y1="11.507" x2="0" y2="91.507" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#6348FE"/><stop offset="1" stop-color="#610595"/></linearGradient></defs></svg>
         <p class="continue__title">Thank you!</p>
         <p class="continue__text">We've added your card details</p>
       </div>
@@ -63,8 +63,10 @@
         <span class="form__error hidden" data-error="number">Error</span>
       </label>
       <div class="form__container">
-        <label class="form__field" for="month">
-          Exp. Date (MM/YY)
+        <div class="form__field">
+          <label for="month">
+            Exp. Date (MM/YY)
+          </label>
           <div class="form__inputs">
             <input
               type="text"
@@ -84,7 +86,7 @@
           </div>
           <span class="form__error hidden" data-error="month">Error</span>
           <span class="form__error hidden" data-error="year">Error</span>
-        </label>
+        </div>
         <label class="form__field" for="cvc">
           CVC
           <input
@@ -105,6 +107,7 @@
 
   <div class="toast toast--info hidden" data-toast>
     <p class="toast__message">Hello</p>
+    <a href="/" class="toast__link">Or reset the page</a>
     <button class="toast__close">
       <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"></path></svg>
     </button>
